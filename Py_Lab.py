@@ -1303,7 +1303,7 @@
 ############################################################
 # [8-8] n명 이름 중복 제거하기
 ############################################################
-##print(len(set(tuple(input().split()))))
+##print(len(set(input().split())))
 
 ############################################################
 # [8-9] n개 정수 입력 받아 오름차순, 내림차순으로 정렬하기
@@ -1732,17 +1732,13 @@
 # [13-6] RGB 이미지 분리
 ############################################################
 
-image = (0x1D, 0x13, 0x25, 0x13, 0x27, 0x45, 0x08, 0xAB, 0x3F)
-
-# 코드 작성
-
-s = image[0::3],image[1::3],image[2::3]
-l=len(s[0])
-ar, ag, ab = map(sum, s)
-ar = round(ar / l)
-ag = round(ag / l)
-ab = round(ab / l)
-print("0x%x 0x%x 0x%x" % (ar, ag, ab))
+##image = (0x1D, 0x13, 0x25, 0x13, 0x27, 0x45, 0x08, 0xAB, 0x3F)
+##
+### 코드 작성
+##
+##r,g,b = image[0::3],image[1::3],image[2::3]
+##ar, ag, ab = map(round, (sum(r)/len(r), sum(g)/len(g), sum(b)/len(b)))
+##print("0x%x 0x%x 0x%x" % (ar, ag, ab))
 
 ############################################################
 # [13-7] 컨테이너의 아이템 부분 갱신
@@ -1895,10 +1891,10 @@ print("0x%x 0x%x 0x%x" % (ar, ag, ab))
 ############################################################
 # [14-7] 문자열 복제기
 ############################################################
-
+##
 ##def string_repeat(s, n) :
 ##
-##    # 코드 작성
+##    x = s*n
 ##
 ##    return x
 ##
@@ -1913,6 +1909,8 @@ print("0x%x 0x%x 0x%x" % (ar, ag, ab))
 ##def score_find(t) :
 ##
 ##    # 코드 작성
+##    
+##    return t.index(max(t))+1, t.index(min(t))+1
 ##
 ##score = tuple(map(int, input().split()))
 ##print(score_find(score))
@@ -1954,7 +1952,7 @@ print("0x%x 0x%x 0x%x" % (ar, ag, ab))
 ############################################################
 # [14-10-2] 함수의 변수 사용 2
 ############################################################
-
+##
 ##a = 1
 ##
 ##def func() :
@@ -1985,7 +1983,7 @@ print("0x%x 0x%x 0x%x" % (ar, ag, ab))
 ############################################################
 # [14-12] nonlocal 키워드
 ############################################################
-
+##
 ##a = 10
 ##
 ##def f():
@@ -2193,7 +2191,7 @@ print("0x%x 0x%x 0x%x" % (ar, ag, ab))
 ##print('{0} : price is {2}, color is {1}'.format(*t))
 ##print('{name} : price is {price}, color is {color}'.format(**d))
 ##print(*d)
-##print('{name} : price is {price}, color is {color}'.format(*d))
+###print('{name} : price is {price}, color is {color}'.format(*d))
 ##print(**d)
 ##
 ##d =  {'sep':'*', 'end':'!!!'}
@@ -2392,10 +2390,10 @@ print("0x%x 0x%x 0x%x" % (ar, ag, ab))
 ##
 ##print(add(3,4))
 ##print(sub(3,4))
-
+##
 ##from my_module import add, sub
 ##print(add(3,4), sub(3,4))
-
+##
 ##from my_module import *
 ##print(add(3,4), sub(3,4))
 
@@ -2487,8 +2485,14 @@ print("0x%x 0x%x 0x%x" % (ar, ag, ab))
 ##import random
 ##
 ### 코드 작성
-
-
+##print('가위 : 0, 바위 : 1, 보 : 2 =>',end=' ')
+##human = int(input())
+##computer = random.randrange(0,3)
+##choice = ('가위', '바위', '보')
+##print('사람 : '+choice[human]+', PC : '+choice[computer])
+##result = (('비김','패배','승리'),('승리','비김','패배'),('패배', '승리', '비김'))
+##print('결과 : ' + result[human][computer])
+##
 ############################################################
 # [17-1] 조건식과 거짓 조건
 ############################################################
@@ -2521,6 +2525,8 @@ print("0x%x 0x%x 0x%x" % (ar, ag, ab))
 
 ##def func(a):
 ##	# 코드 작성
+##	print("Odd" if a%2 else "Even")
+##	#print("Odd") if a%2 else print("Even")
 ##
 ##func(10)
 ##func(11)
@@ -2556,6 +2562,7 @@ print("0x%x 0x%x 0x%x" % (ar, ag, ab))
 
 ##def student_check(t, s) :
 ##    # 코드 작성
+##    return 'YES' if s in t else 'NO'
 ##
 ##t = ('kim', 'lee', 'park', 'kang', 'song', 'lew', 'moon')
 ##s = input()
@@ -2564,8 +2571,10 @@ print("0x%x 0x%x 0x%x" % (ar, ag, ab))
 ############################################################
 # [17-6] 나는 몇 조인가?
 ############################################################
-
-
+##def func(m, n) :
+##    return 'YES' if m%10 == n else 'NO'
+##m, n = map(int, input().split())
+##print('FAULT') if n not in range(0,10) else print(func(m, n))
 
 
 ############################################################
@@ -2582,9 +2591,11 @@ print("0x%x 0x%x 0x%x" % (ar, ag, ab))
 ############################################################
 # [17-8] 3의 배수 또는 7의 배수 판단
 ############################################################
-
-
-
+##
+##def func(n) :
+##       return 'NO' if n%3 and n%7 else 'YES'
+##
+##print(func(int(input())))
 
 
 ############################################################
@@ -2592,24 +2603,27 @@ print("0x%x 0x%x 0x%x" % (ar, ag, ab))
 ############################################################
 
 ##def func(n):
-##
+##    return 'A' if (n>=90) \
+##        else'B' if (n>=80) \
+##        else 'C' if (n>=70) \
+##        else 'D' if (n>=60) else 'F'
 ##    # 코드 작성
 ##
 ##n = int(input())
-##
+##print('ERROR' if (n < 0 or n > 100) else func(n))
 ###코드 작성
 
 ############################################################
 # [17-10] 학점 계산 프로그램 개선
 ############################################################
 
-##def func(n):
-##
-##    # 코드 작성
-##
-##n = int(input())
-##
-###코드 작성
+def func(n):
+    return 'FFFFFFDCBAA'[n//10]
+    # 코드 작성
+
+n = int(input())
+print(func(n) if 0<=n<=100 else 'ERROR')
+#코드 작성
 
 ############################################################
 # [17-11] Short circuit 원리
@@ -2679,9 +2693,9 @@ print("0x%x 0x%x 0x%x" % (ar, ag, ab))
 
 ##a = 10
 ##l1 = lambda : print(1)
-##l2 = 
-##l3 = 
-##l4 = 
+##l2 = lambda : print(a+1)
+##l3 = lambda x,y: print(max(x,y))
+##l4 = lambda x,y: x+y
 ##
 ##l1()
 ##l2()
